@@ -1,5 +1,4 @@
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Pr9897 {
     public static void main(String[] args) {
@@ -12,20 +11,25 @@ class Test {
     public void calc(){
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
+        int len;
         String s = in.nextLine();
 
         for(int i=0; i<n; i++){
             s = in.nextLine();
             String[] splitter = s.split(" ");
-            int len = splitter.length;
-            Comparator<String> com = new Comparator<String>() {
-                @Override
-                public int compare(String o1, String o2) {
-                    return o1.length()-o2.length();
-                }
-            };
+            List<String> list = new ArrayList<>();
+            len = splitter.length;
+            for(int j=0; j<len; j++){
+                list.add(splitter[j]);
+            }
+            Comparator<String> cm = (String o1, String o2) -> o1.length()-o2.length();
+            Collections.sort(list, cm);
 
-
+            len = list.size();
+            for(int j=0; j<len-1; j++){
+                System.out.print(list.get(j) + " ");
+            }
+            System.out.println(list.get(len-1));
         }
     }
 }
