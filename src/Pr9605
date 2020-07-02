@@ -1,0 +1,75 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int lenK,lenL,lenM;
+        cin>>lenK;
+        int kk[lenK];
+        for(int i=0; i<lenK; i++){
+            cin>>kk[i];
+        }
+        cin>>lenL;
+        int ll[lenL];
+        for(int i=0; i<lenL; i++){
+            cin>>ll[i];
+        }
+        cin>>lenM;
+        int mm[lenM];
+        for(int i=0; i<lenM; i++){
+            cin>>mm[i];
+        }
+
+        int k=0, l=0, m=0, cnt=0;
+
+        while (true){
+            if(k < lenK && l < lenL && m < lenM && kk[k] <= ll[l] && kk[k] <= mm[m]){
+                cout<<kk[k++];
+            }
+            else if(k < lenK && l < lenL && m < lenM && ll[l] <= kk[k] && ll[l] <= mm[m]){
+                cout<<ll[l++];
+            }
+            else if(k < lenK && l < lenL && m < lenM && mm[m] <= kk[k] && mm[m] <= ll[l]){
+                cout<<mm[m++];
+            }
+            else if(l < lenL && m < lenM && ll[l] <= mm[m]){
+                cout<<ll[l++];
+            }
+            else if(l < lenL && m < lenM && mm[m] < ll[l]){
+                cout<<mm[m++];
+            }
+            else if(k < lenK && m < lenM && mm[m] <= kk[k]){
+                cout<<mm[m++];
+            }
+            else if(k < lenK && m < lenM && kk[k] < mm[k]){
+                cout<<kk[k++];
+            }
+            else if(k < lenK && l < lenL && ll[l] <= kk[k]){
+                cout<<ll[l++];
+            }
+            else if(k < lenK && l < lenL && kk[k] < ll[l]){
+                cout<<kk[k++];
+            }
+            else if(k < lenK){
+                cout<<kk[k++];
+            }
+            else if(l < lenL){
+                cout<<ll[l++];
+            }
+            else if(m < lenM){
+                cout<<mm[m++];
+            }
+
+
+            cnt++;
+            if(cnt == lenK + lenL + lenM) {
+                cout<<endl;
+                break;
+            }
+            else {
+                cout<<" ";
+            }
+        }
+    return 0;
+}

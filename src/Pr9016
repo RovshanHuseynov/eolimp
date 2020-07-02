@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int n,q,x;
+int a[1000001];
+
+string binarySearch(int left, int right, int x){
+    if(left > right){
+        return "NO";
+    }
+
+    int mid = left + (right - left) / 2;
+    //cout<<a[left]<<" "<<a[right]<<" "<<a[mid]<<" "<<x<<endl;
+    if (a[mid] == x) {
+        return "YES";
+    } else if (a[mid] > x) {
+        return binarySearch(left, mid - 1, x);
+    } else {
+        return binarySearch(mid + 1, right, x);
+    }
+}
+int main()
+{
+    cin>>n>>q;
+    for(int i=0; i<n; i++){
+        cin>>a[i];
+    }
+
+    for(int i=0; i<q; i++){
+        cin>>x;
+        cout<<binarySearch(0, n-1, x)<<endl;
+    }
+
+    return 0;
+}
