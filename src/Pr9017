@@ -1,0 +1,38 @@
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+int n,q,x;
+map<int,int>m;
+map<int,int>::iterator it;
+int main()
+{
+    cin>>n>>q;
+    for(int i=0; i<n; i++){
+        cin>>x;
+
+        it = m.find(x);
+        if(it == m.end()){
+            //cout<<"if"<<endl;
+            m[x] = 1;
+        }
+        else{
+            //cout<<"else"<<endl;
+            m[x] = (m.find(x)->second) + 1;
+        }
+    }
+
+    for(int i=0; i<q; i++){
+        cin>>x;
+
+        it = m.find(x);
+        if(it == m.end()){
+            cout<<0<<endl;
+        }
+        else{
+            cout<<m.find(x)->second<<endl;
+        }
+    }
+    return 0;
+}
