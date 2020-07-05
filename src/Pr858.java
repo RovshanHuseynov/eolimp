@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class Pr858 {
-    int [] month = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
     public static void main(String[] args) {
         Pr858 a = new Pr858();
         a.calc();
     }
+
+    int[] month = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     public boolean leap(int year){
         if(year % 400 == 0){
