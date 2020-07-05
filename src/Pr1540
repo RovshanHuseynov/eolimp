@@ -1,0 +1,49 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int a[5],sum;
+bool flag;
+
+bool func(int sum, int index){
+    if(index == 4){
+        //cout<<a[0]<<" "<<a[1]<<" "<<a[2]<<" "<<a[3]<<" "<<a[4]<<endl;
+        //cout<<sum<<endl;
+        //cout<<sum<<" "<<index<<endl;
+        if(sum + a[index] == 23) return 1;
+        if(sum - a[index] == 23) return 1;
+        if(sum * a[index] == 23) return 1;
+        return 0;
+    }
+
+    if(func(sum + a[index] , index+1)) return 1;
+    if(func(sum - a[index] , index+1)) return 1;
+    if(func(sum * a[index] , index+1)) return 1;
+    return 0;
+}
+
+int main()
+{
+    while(cin>>a[0]>>a[1]>>a[2]>>a[3]>>a[4]){
+        if(a[0] == 0 && a[1] == 0 && a[2] == 0 && a[3] == 0 && a[4] == 0){
+            break;
+        }
+        sort(a,a+5);
+        flag = false;
+        do{
+            //cout<<a[0]<<" "<<a[1]<<" "<<a[2]<<" "<<a[3]<<" "<<a[4]<<endl;
+            if(func(a[0], 1)){
+                cout<<"Possible"<<endl;
+                flag = true;
+                break;
+            }
+        }
+        while(next_permutation(a,a+5));
+
+        if(!flag){
+            cout<<"Impossible"<<endl;
+        }
+    }
+    return 0;
+}
