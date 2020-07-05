@@ -68,7 +68,7 @@ class Tree {
         int left = height(cur.left);
         int right = height(cur.right);
 
-        if(Math.abs(left - right) > 2){
+        if(Math.abs(left - right) > 1 || left == -1 || right == -1){
             return -1;
         }
         else{
