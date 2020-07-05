@@ -2,12 +2,10 @@ import java.util.Scanner;
 
 public class Pr7466 {
     public static void main(String[] args) {
-        Test a = new Test();
+        Pr7466 a = new Pr7466();
         a.calc();
     }
-}
 
-class Test {
     public void calc(){
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -68,7 +66,7 @@ class Tree {
         int left = height(cur.left);
         int right = height(cur.right);
 
-        if(Math.abs(left - right) > 1 || left == -1 || right == -1){
+        if(left == -1 || right == -1 || Math.abs(left - right) > 1){
             return -1;
         }
         else{
