@@ -19,7 +19,7 @@ public class Pr858 {
         return false;
     }
 
-    public int calc(){
+    public void calc(){
         Scanner in = new Scanner(System.in);
         int birthDay, birthMonth, curDay, curMonth, curYear, cnt = 0;
         birthDay = in.nextInt();
@@ -66,6 +66,6 @@ public class Pr858 {
             cnt += birthDay;
         }
 
-        return cnt;
+        System.out.println(cnt);
     }
 }
