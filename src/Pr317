@@ -1,0 +1,102 @@
+// 3% accepted
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string a,b,result,temp;
+
+string add(string a, string b){    // 123 + 345
+    string ans = "";
+    int memo = 0, cur;
+    int lenA = a.size() - 1;
+    int lenB = b.size() - 1;
+
+    while(lenA >= 0 || lenB >= 0){
+        if(lenA >= 0 && lenB >= 0){
+            cur = ((int)a[lenA] - 48) + ((int)b[lenB] - 48) + memo;
+            memo = cur / 10;
+            cur %= 10;
+            ans.append(to_string(cur));
+            lenA--;
+            lenB--;
+        }
+        else if(lenA >= 0){
+            cur = ((int)a[lenA] - 48) + memo;
+            memo = cur / 10;
+            cur %= 10;
+            ans.append(to_string(cur));
+            lenA--;
+        }
+        else if(lenB >= 0){
+            cur = ((int)b[lenB] - 48) + memo;
+            memo = cur / 10;
+            cur %= 10;
+            ans.append(to_string(cur));
+            lenB--;
+        }
+    }
+
+    if(memo > 0){
+        ans.append(to_string(memo));
+    }
+
+    string last = "";
+
+    for(int i=ans.size()-1; i>=0; i--){
+        last += ans[i];
+    }
+
+    return last;
+}
+
+string mult(string a, char b){    // 12345667 * 3
+    string ans = "";
+    int memo = 0, cur;
+    int lenA = a.size() - 1;
+
+    for(int i=lenA; i>=0; i--){
+        cur = ((int)a[i] - 48) * ((int)b - 48) + memo;
+        memo = cur / 10;
+        cur %= 10;
+        ans.append(to_string(cur));
+    }
+
+    if(memo > 0){
+        ans.append(to_string(memo));
+    }
+
+    string last = "";
+
+    for(int i=ans.size()-1; i>=0; i--){
+        last += ans[i];
+    }
+
+    return last;
+}
+
+int main()
+{
+    cin>>a;
+    cin>>b;
+
+    int lenB = b.size() - 1;
+    result = "0";
+
+    for(int i=lenB; i>=0; i--){
+        temp = mult(a, b[i]);
+
+        for(int j=1; j<=(lenB-i); j++){
+            temp += "0";
+        }
+
+        //cout<<temp<<endl;
+
+        result = add(result, temp);
+    }
+
+    cout<<result<<endl;
+
+    return 0;
+}
