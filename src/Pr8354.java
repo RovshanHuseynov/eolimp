@@ -2,16 +2,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Pr8354 {
+    public static void main(String[] args) {
+        Pr8354 a = new Pr8354();
+        a.calc1();
+    }
+
     public ArrayList<Integer> ans;
     public ArrayList<Integer> arr;
     int n;
     long minn = 920_000_000_000_000_0L;
     String s;
-
-    public static void main(String[] args) {
-        Pr8354 a = new Pr8354();
-        a.calc1();
-    }
 
     public void calc(){
         // 53% accepted
