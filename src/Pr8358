@@ -1,0 +1,34 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int x,sum,cnt,maxx,minn,a[100001],l;
+double ans;
+int main()
+{
+    while(cin>>x){
+        a[l++] = x;
+    }
+
+    sort(a,a+l);
+
+    minn = a[0];
+    maxx = a[l-1];
+
+    for(int i=0; i<l; i++){
+        if(a[i] == minn || a[i] == maxx){
+            continue;
+        }
+        else{
+            cnt++;
+            sum += a[i];
+        }
+    }
+
+    cout.setf(ios::fixed);
+    cout.precision(0);
+    ans = (double)sum/(double)(cnt);
+    cout<<ans<<endl;
+    return 0;
+}
