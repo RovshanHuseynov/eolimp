@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Pr8354 {
     public static void main(String[] args) {
-        Test a = new Test();
+        Test1 a = new Test1();
         a.calc();
     }
 }
@@ -17,7 +17,7 @@ class Test {
         //Scanner in = new Scanner(System.in);
         //n = in.nextInt();
 
-        for(int z=1; z<=50; z++) {
+        for(int z=7500; z<=8000; z++) {
             n = z;
             int temp;
             ans = new ArrayList<>();
@@ -30,12 +30,6 @@ class Test {
                     arr.add(temp);
                 }
             }
-/*
-        for(int i=0; i<arr.size(); i++){
-            System.out.println(i + " " + arr.get(i));
-        }
- */
-
 
             while (n > 0) {
                 fill(9);
@@ -68,5 +62,55 @@ class Test {
             n -= arr.get(x);
             ans.add(x);
         }
+    }
+}
+
+class Test1 {
+    int n;
+    long minn = 920_000_000_000_000_0L;
+    String s;
+    public void calc(){
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        rec(0, 0);
+        System.out.println(minn);
+    }
+
+    public void rec(long cur, int sum){
+        if(cur > minn){
+            return;
+        }
+
+        if(cur < 0){
+            return;
+        }
+
+        s = String.valueOf(cur);
+        if(s.length() > 15){
+            return;
+        }
+
+        if(sum > n){
+            return;
+        }
+        else if(sum == n){
+            //System.out.println(cur);
+            if(cur < minn){
+                minn = cur;
+            }
+            else{
+                return;
+            }
+        }
+
+        rec(cur * 10 + 1, sum + 1);
+        rec(cur * 10 + 2, sum + 8);
+        rec(cur * 10 + 3, sum + 27);
+        rec(cur * 10 + 4, sum + 64);
+        rec(cur * 10 + 5, sum + 125);
+        rec(cur * 10 + 6, sum + 216);
+        rec(cur * 10 + 7, sum + 343);
+        rec(cur * 10 + 8, sum + 512);
+        rec(cur * 10 + 9, sum + 729);
     }
 }
