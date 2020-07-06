@@ -9,6 +9,7 @@ public class Pr8354 {
 }
 
 class Test {
+    // 53% accepted
     public ArrayList<Integer> ans;
     public ArrayList<Integer> arr;
     int n;
@@ -66,6 +67,7 @@ class Test {
 }
 
 class Test1 {
+    // 73% accepted
     int n;
     long minn = 920_000_000_000_000_0L;
     String s;
