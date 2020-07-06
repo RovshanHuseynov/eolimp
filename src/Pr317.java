@@ -73,7 +73,7 @@ public class Pr317 {
         return last;
     }
 
-    public String mult(String a, char b){    // 3 * 12345667
+    public String mult(String a, char b){    // 12345667 * 3
         String ans = "";
         int memo = 0, cur;
         int lenA = a.length() - 1;
