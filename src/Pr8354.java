@@ -2,19 +2,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Pr8354 {
-    public static void main(String[] args) {
-        Test1 a = new Test1();
-        a.calc();
-    }
-}
-
-class Test {
-    // 53% accepted
     public ArrayList<Integer> ans;
     public ArrayList<Integer> arr;
     int n;
+    long minn = 920_000_000_000_000_0L;
+    String s;
+
+    public static void main(String[] args) {
+        Pr8354 a = new Pr8354();
+        a.calc1();
+    }
 
     public void calc(){
+        // 53% accepted
         //Scanner in = new Scanner(System.in);
         //n = in.nextInt();
 
@@ -64,14 +64,9 @@ class Test {
             ans.add(x);
         }
     }
-}
 
-class Test1 {
-    // 73% accepted
-    int n;
-    long minn = 920_000_000_000_000_0L;
-    String s;
-    public void calc(){
+    public void calc1(){
+        // 73% accepted
         Scanner in = new Scanner(System.in);
         n = in.nextInt();
         rec(0, 0);
