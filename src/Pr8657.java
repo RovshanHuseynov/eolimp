@@ -3,12 +3,10 @@ import java.util.Scanner;
 
 public class Pr8657 {
     public static void main(String[] args) {
-        Test a = new Test();
+        Pr8657 a = new Pr8657();
         a.calc();
     }
-}
 
-class Test {
     public void calc(){
         Scanner in = new Scanner(System.in);
         int [] a = new int[4];
