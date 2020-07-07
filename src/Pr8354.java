@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Pr8354 {
     public static void main(String[] args) {
         Pr8354 a = new Pr8354();
-        a.calc1();
+        a.calc2();
     }
 
     public ArrayList<Integer> ans;
@@ -109,5 +109,41 @@ public class Pr8354 {
         rec(cur * 10 + 7, sum + 343);
         rec(cur * 10 + 8, sum + 512);
         rec(cur * 10 + 9, sum + 729);
+    }
+
+    public void calc2(){
+        // 100% accepted
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        String [] dp = new String[n+1];
+        int [] cubes = {0, 1, 8, 27, 64, 125, 216, 343, 512, 729};
+        dp[1] = "1";
+        dp[0] = "";
+
+        for(int i=2; i<=n; i++){
+            dp[i] = dp[i - 1] + "1";
+
+            for(int j = 2; j <= 9; j++)
+                if (i - cubes[j] >= 0)
+                    dp[i] = minn(dp[i], dp[i - cubes[j]] + j);
+        }
+
+        System.out.println(dp[n]);
+    }
+
+    public String minn(String a, String b){
+        //System.out.println(a + " " + b);
+        if(a.length() < b.length())
+            return a;
+        else if(b.length() < a.length())
+            return b;
+
+        long f = Long.parseLong(a);
+        long s = Long.parseLong(b);
+
+        if(f < s)
+            return a;
+        else
+            return b;
     }
 }
