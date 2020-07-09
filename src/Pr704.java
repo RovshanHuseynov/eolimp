@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class Pr9005 {
+public class Pr704 {
     public static void main(String[] args) {
-        Test a = new Test();
+        Test1 a = new Test1();
         a.calc();
     }
 }
 
-class Test {
+class Test1 {
     public void calc(){
         Scanner in = new Scanner(System.in);
         int x = in.nextInt();
