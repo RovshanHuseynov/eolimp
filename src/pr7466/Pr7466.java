@@ -1,3 +1,5 @@
+package pr7466;
+
 import java.util.Scanner;
 
 public class Pr7466 {

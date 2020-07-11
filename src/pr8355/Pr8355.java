@@ -1,3 +1,5 @@
+package pr8355;
+
 import java.util.Scanner;
 
 public class Pr8355 {

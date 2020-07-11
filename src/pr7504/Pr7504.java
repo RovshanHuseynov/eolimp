@@ -1,3 +1,5 @@
+package pr7504;
+
 import java.util.*;
 
 public class Pr7504 {
