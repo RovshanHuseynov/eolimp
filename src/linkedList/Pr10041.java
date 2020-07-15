@@ -7,6 +7,9 @@ public class Pr10041 {
         ll.addLast(6);
         ll.addLast(8);
         ll.addLast(10);
+        ll.addLast(1);
+
+        System.out.println(ll.sum(ll.head));
 
         LinkedListt ll2 = new LinkedListt();
         ll2.addLast(1);
@@ -14,7 +17,7 @@ public class Pr10041 {
         ll2.addLast(11);
         ll2.addLast(13);
 
-        ll.merge(ll.head, ll2.head);
+        //ll.merge(ll.head, ll2.head);
 //        ll.addLast(1);
 //        ll.addLast(4);
 //        ll.addLast(7);

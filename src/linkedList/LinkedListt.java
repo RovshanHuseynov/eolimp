@@ -175,4 +175,13 @@ public class LinkedListt {
             return null;
         }
     }
+
+    public int sum(Node cur){
+        if(cur.next == null){
+            return cur.val;
+        }
+        else{
+            return cur.val + sum(cur.next);
+        }
+    }
 }
