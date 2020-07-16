@@ -4,12 +4,11 @@ public class Pr10041 {
     public static void main(String[] args) {
         LinkedListt ll = new LinkedListt();
         ll.addLast(1);
+        ll.addLast(1);
         ll.addLast(6);
         ll.addLast(8);
         ll.addLast(10);
-        ll.addLast(1);
-
-        System.out.println(ll.sum(ll.getHead()));
+        ll.addLast(10);
 
         LinkedListt ll2 = new LinkedListt();
         ll2.addLast(1);
@@ -17,7 +16,8 @@ public class Pr10041 {
         ll2.addLast(11);
         ll2.addLast(13);
 
-        //ll.merge(ll.head, ll2.head);
+        System.out.println(ll.size(ll.getHead()));
+//        ll.merge(ll.getHead(), ll2.getHead());
 //        ll.addLast(1);
 //        ll.addLast(4);
 //        ll.addLast(7);

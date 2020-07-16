@@ -56,7 +56,7 @@ public class LinkedListt {
             return false;
         }
 
-        int size = size();
+        int size = size(head);
         int cnt = 1;
         Node cur = head;
 
@@ -88,19 +88,12 @@ public class LinkedListt {
         return head == null;
     }
 
-    public int size(){
-        if(head == null){
-            return 0;
+    public int size(Node cur){
+        if(cur.next == null){
+            return 1;
         }
 
-        int cnt = 0;
-        Node cur = head;
-        while(cur.next != null){
-            cnt++;
-            cur = cur.next;
-        }
-
-        return cnt + 1;
+        return 1 + size(cur.next);
     }
 
     public Node getTail(){
@@ -157,11 +150,11 @@ public class LinkedListt {
         }
         else if(cur1 != null){
             System.out.print(cur1.val + " ");
-            return merge(cur1.next, cur2);
+            return merge(cur1.next, null);
         }
         else if(cur2 != null){
             System.out.print(cur2.val + " ");
-            return merge(cur1, cur2.next);
+            return merge(null, cur2.next);
         }
         else{
             return null;
