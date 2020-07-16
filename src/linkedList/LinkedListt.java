@@ -138,25 +138,38 @@ public class LinkedListt {
     }
 
     public Node merge(Node cur1, Node cur2){
-        if(cur1 != null && cur2 != null){
-            if(cur1.val < cur2.val){
-                System.out.print(cur1.val + " ");
-                return merge(cur1.next, cur2);
-            }
-            else{
-                System.out.print(cur2.val + " ");
-                return merge(cur1, cur2.next);
+        if(cur1 != null && cur2 != null) {
+            if (cur1.val < cur2.val) {
+                merge(cur1.next, cur2);
+                //System.out.print(cur1.val + " ");
+
+                if(cur1.next != null && cur1.next.val >= cur2.val){
+                    cur2.next = cur1.next;
+                    cur1.next = cur2;
+                }
+                return cur1;
+            } else {
+                merge(cur1, cur2.next);
+                //System.out.print(cur2.val + " ");
+
+                if(cur2.next != null && cur2.next.val >= cur1.val){
+                    cur2.next = cur1;
+                }
+
+                return cur2;
             }
         }
         else if(cur1 != null){
-            System.out.print(cur1.val + " ");
-            return merge(cur1.next, null);
+            merge(cur1.next, null);
+            //System.out.print(cur1.val + " ");
+            return cur1;
         }
         else if(cur2 != null){
-            System.out.print(cur2.val + " ");
-            return merge(null, cur2.next);
+            merge(null, cur2.next);
+            //System.out.print(cur2.val + " ");
+            return cur2;
         }
-        else{
+        else {
             return null;
         }
     }
