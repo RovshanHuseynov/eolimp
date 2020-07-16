@@ -9,7 +9,7 @@ public class Pr10041 {
         ll.addLast(10);
         ll.addLast(1);
 
-        System.out.println(ll.sum(ll.head));
+        System.out.println(ll.sum(ll.getHead()));
 
         LinkedListt ll2 = new LinkedListt();
         ll2.addLast(1);

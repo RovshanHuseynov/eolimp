@@ -11,7 +11,7 @@ public class LinkedListt {
         }
     }
 
-    Node head;
+    private Node head;
 
     public void addLast(int val){
         Node newNode = new Node(val);
@@ -103,27 +103,19 @@ public class LinkedListt {
         return cnt + 1;
     }
 
-    public int getTail(){
-        if(head == null){
-            return 0;
-        }
-
+    public Node getTail(){
         Node cur = head;
 
         while(true){
             if(cur.next == null){
-                return cur.val;
+                return cur;
             }
             cur = cur.next;
         }
     }
 
-    public int getHead(){
-        if(head == null){
-            return 0;
-        }
-
-        return head.val;
+    public Node getHead(){
+        return head;
     }
 
     public void printReverseRecursion(Node cur){
