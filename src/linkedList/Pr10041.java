@@ -5,9 +5,11 @@ public class Pr10041 {
         LinkedListt ll = new LinkedListt();
         ll.addLast(1);
         ll.addLast(3);
-        //ll.addLast(5);
-        //ll.addLast(7);
-        //ll.addLast(9);
+//        ll.addLast(5);
+//        ll.addLast(7);
+//        ll.addLast(9);
+
+        System.out.println(ll.hasCycle(ll.getHead()));
 
         LinkedListt ll2 = new LinkedListt();
         ll2.addLast(1);
@@ -20,9 +22,9 @@ public class Pr10041 {
         ll2.addLast(12);
         ll2.addLast(13);
 
-        ll.merge(ll.getHead(), ll2.getHead());
-        System.out.println();
-        ll.print();
+//        ll.merge(ll.getHead(), ll2.getHead());
+//        System.out.println();
+//        ll.print();
 //        ll.addLast(1);
 //        ll.addLast(4);
 //        ll.addLast(7);

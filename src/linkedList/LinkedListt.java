@@ -182,4 +182,36 @@ public class LinkedListt {
             return cur.val + sum(cur.next);
         }
     }
+
+    public int hasCycle(Node cur){
+        java.util.ArrayList<Object> arr = new java.util.ArrayList<>();
+
+        while(cur != null) {
+            if (arr.contains(cur)) {
+                return 1;
+            } else {
+                arr.add(cur);
+            }
+
+            cur = cur.next;
+        }
+
+        return 0;
+    }
+
+    public Node detectCycle(Node cur){
+        java.util.ArrayList<Object> arr = new java.util.ArrayList<>();
+
+        while(cur != null) {
+            if (arr.contains(cur)) {
+                return cur;
+            } else {
+                arr.add(cur);
+            }
+
+            cur = cur.next;
+        }
+
+        return null;
+    }
 }
