@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+long long a,b,c,d;
+char x;
+
+long long ebob(long long a, long long b){
+    while(b != 0){
+            a = a % b;
+            long long temp = a;
+            a = b;
+            b = temp;
+        }
+
+        return a;
+}
+
+long long ekob(long long a, long long b){
+    long long eb = ebob(a, b);
+
+        if(a % eb == 0){
+            return a / eb * b;
+        }
+        else{
+            return b / eb * a;
+        }
+}
+
+int main()
+{
+    cin>>a>>x>>b>>c>>x>>d;
+
+    long long ek = ekob(b,d);
+
+    if(ek / b * a < ek / d * c){
+        cout<<a<<"/"<<b<<" "<<c<<"/"<<d<<endl;
+    }
+    else{
+        cout<<c<<"/"<<d<<" "<<a<<"/"<<b<<endl;
+    }
+
+    return 0;
+}

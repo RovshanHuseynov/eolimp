@@ -55,6 +55,33 @@ class Test2 {
                 System.out.println("-1");
             }
         }
+        else if(n==3){
+            List<Character> l = new ArrayList<>();
+            for(int i=0; i<n; i++){
+                l.add(s.charAt(i));
+            }
+
+            Collections.sort(l);
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    for (int k = 0; k < n; k++) {
+                        if(i != j && j != k && i != k && l.get(i) != '0') {
+                            cur = ((int) l.get(i) - 48) * 100 + ((int) l.get(j) - 48) * 10 + ((int) l.get(k) - 48);
+                            if (cur % 8 == 0 && cur < min) {
+                                min = cur;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(min != 1000){
+                System.out.println(min);
+            }
+            else{
+                System.out.println("-1");
+            }
+        }
         else {
             List<Character> l = new ArrayList<>();
             for(int i=0; i<n; i++){
@@ -83,17 +110,37 @@ class Test2 {
                 Character three = l.get(minn.c);
                 //System.out.println(one + " " + two + " " + three);
 
-                l.remove(minn.a);
-                l.remove(minn.b);
                 l.remove(minn.c);
+                l.remove(minn.b);
+                l.remove(minn.a);
 
-                for(Character c : l){
-                    System.out.print(c);
+                n = n-3;
+
+                int it = 0, cnt=0;
+                while(it < n){
+                    if(l.get(it) != '0'){
+                        System.out.print(l.get(it));
+                        l.remove(it);
+                        break;
+                    }
+                    else{
+                        cnt++;
+                    }
+                    it++;
                 }
 
-                System.out.print(one);
-                System.out.print(two);
-                System.out.println(three);
+                if(cnt > 0 && cnt == n){
+                    System.out.println(-1);
+                }
+                else {
+                    for (Character c : l) {
+                        System.out.print(c);
+                    }
+
+                    System.out.print(one);
+                    System.out.print(two);
+                    System.out.println(three);
+                }
             }
             else{
                 System.out.println("-1");
