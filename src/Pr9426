@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+
+long long a,b,c,d,ek,eb,suret,mexrec;
+char x,sign;
+
+long long ebob(long long a, long long b){
+    while(b != 0){
+            a = a % b;
+            long long temp = a;
+            a = b;
+            b = temp;
+        }
+
+        return a;
+}
+
+long long ekob(long long a, long long b){
+    long long eb = ebob(a, b);
+
+        if(a % eb == 0){
+            return a / eb * b;
+        }
+        else{
+            return b / eb * a;
+        }
+}
+
+int main()
+{
+    while(cin>>a>>x>>b>>sign>>c>>x>>d){
+        /*
+        cout<<a<<endl;
+        cout<<b<<endl;
+        cout<<sign<<endl;
+        cout<<c<<endl;
+        cout<<d<<endl;
+        */
+
+        if(sign == '/'){
+            long temp = c;
+            c = d;
+            d = temp;
+        }
+
+        suret = a * c;
+        mexrec = b * d;
+
+        eb = ebob(suret, mexrec);
+        suret = suret / eb;
+        mexrec = mexrec / eb;
+
+        cout<<suret<<'/'<<mexrec<<endl;
+    }
+
+    return 0;
+}
