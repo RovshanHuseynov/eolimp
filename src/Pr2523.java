@@ -25,8 +25,8 @@ public class Pr2523 {
     }
 
     public String solve(int n, int left, int right){
-        if(n == 1) return "b";
-        else if(n == 2) return "a";
+        if(n == 0) return "0";
+        else if(n == 1) return "1";
         else if(right <= fibo[n-1]) return solve(n-1, left, right);
         else if(left > fibo[n-1]) return solve(n-2, left - fibo[n-1], right- fibo[n-1]);
         else return solve(n-1, left, fibo[n-1]) + solve(n-2, 1, right - fibo[n-1]);
