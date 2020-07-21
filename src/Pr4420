@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+#define EPS 1e-10
+
+using namespace std;
+
+long double a,b,c,d,mid,right;
+
+long double f(long double x) {
+    return a*x*x*x + b*x*x + c*x + d;
+}
+
+int main()
+{
+    cin>>a>>b>>c>>d;
+
+    long double right = 1;
+    while(f(right) * f(-right) >= 0){
+        right *= 2;
+    }
+    long double left = -right;
+
+    while (right - left > EPS) {
+        mid = (left + right) / 2;
+        if (f(mid) * f(right) > 0){
+            right = mid;
+        }
+        else{
+            left = mid;
+        }
+    }
+
+    cout.setf(ios::fixed);
+    cout.precision(6);
+    cout<<left<<endl;
+    return 0;
+}
