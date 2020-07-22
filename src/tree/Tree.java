@@ -183,4 +183,16 @@ public class Tree {
         invert(cur.right);
         return cur;
     }
+
+    public boolean isSymmetric(Node cur){
+        if(cur == null){
+            return true;
+        }
+
+        if((cur.left == null) != (cur.right == null)) {
+            return false;
+        }
+
+        return isSymmetric(cur.left) == isSymmetric(cur.right);
+    }
 }
