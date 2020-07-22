@@ -15,7 +15,7 @@ public class Pr10057 {
         Tree t2 = new Tree();
         t2.insert(4);
         t2.insert(2);
-        t2.insert(3);
+        t2.insert(1);
         t2.insert(5);
         t2.insert(6);
         System.out.println(t2.isSymmetric(t.getHead()));

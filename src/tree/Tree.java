@@ -201,8 +201,7 @@ public class Tree {
             if (tempLeft==null && tempRight==null)
                 continue;
 
-            if ((tempLeft==null && tempRight!=null) ||
-                    (tempLeft!=null && tempRight==null))
+            if ((tempLeft==null || tempRight==null))
                 return false;
 
             if (tempLeft.val != tempRight.val)
