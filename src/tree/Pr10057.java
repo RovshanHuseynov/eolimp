@@ -7,7 +7,7 @@ public class Pr10057 {
         t.insert(3);
         t.insert(1);
         t.insert(10);
-        t.insert(11);
+        //t.insert(11);
 //        Tree t2 = new Tree();
 //        t2.insert(4);
 //        t2.insert(2);
@@ -16,6 +16,6 @@ public class Pr10057 {
 //        t2.insert(10);
 //        t2.insert(9);
 //        t2.insert(16);
-        System.out.println(t.minDepth(t.getHead()));
+        System.out.println(t.maxDepth(t.getHead()));
     }
 }

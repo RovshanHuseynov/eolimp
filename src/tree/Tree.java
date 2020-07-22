@@ -151,4 +151,22 @@ public class Tree {
 
         return 1 + Math.min(minLeft, minRight);
     }
+
+    public int maxDepth(Node cur){
+        if(cur == null){
+            return 0;
+        }
+
+        int maxLeft = maxDepth(cur.left);
+        int maxRight = maxDepth(cur.right);
+
+        if(maxLeft == 0){
+            return 1 + maxRight;
+        }
+        else if(maxRight == 0){
+            return 1 + maxLeft;
+        }
+
+        return 1 + Math.max(maxLeft, maxRight);
+    }
 }
