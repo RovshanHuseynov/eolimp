@@ -91,4 +91,12 @@ public class Tree {
 
         return valLeave + sumLeaves(cur.left) + sumLeaves(cur.right);
     }
+
+    public int sum(Node cur){
+        if(cur == null){
+            return 0;
+        }
+
+        return cur.val + sum(cur.left) + sum(cur.right);
+    }
 }
