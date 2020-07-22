@@ -53,4 +53,42 @@ public class Tree {
         print(cur.left);
         print(cur.right);
     }
+
+    public Node minimum(Node cur){
+        if(cur == null){
+            return null;
+        }
+        else if(cur.left != null){
+            return minimum(cur.left);
+        }
+        else{
+            return cur;
+        }
+    }
+
+    public int sumLeft(Node cur){
+        if(cur == null){
+            return 0;
+        }
+
+        int valLeftLeave = 0;
+        if(cur.left != null && cur.left.left == null && cur.left.right == null){
+            valLeftLeave = cur.left.val;
+        }
+
+        return valLeftLeave + sumLeft(cur.left) + sumLeft(cur.right);
+    }
+
+    public int sumLeaves(Node cur){
+        if(cur == null){
+            return 0;
+        }
+
+        int valLeave = 0;
+        if(cur.left == null && cur.right == null){
+            valLeave = cur.val;
+        }
+
+        return valLeave + sumLeaves(cur.left) + sumLeaves(cur.right);
+    }
 }

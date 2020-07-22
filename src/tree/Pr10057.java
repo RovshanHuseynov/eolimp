@@ -10,6 +10,11 @@ public class Pr10057 {
         t.insert(10);
         t.insert(9);
         t.insert(16);
-        t.print(t.getHead());
+//        t.insert(7);
+//        t.insert(5);
+//        t.insert(13);
+//        t.insert(9);
+//        t.insert(17);
+        System.out.println(t.sumLeft(t.getHead()));
     }
 }
