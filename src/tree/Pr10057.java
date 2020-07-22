@@ -16,6 +16,6 @@ public class Pr10057 {
 //        t2.insert(10);
 //        t2.insert(9);
 //        t2.insert(16);
-        System.out.println(t.maxDepth(t.getHead()));
+        System.out.println(t.invert(t.getHead()));
     }
 }

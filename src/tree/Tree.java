@@ -169,4 +169,18 @@ public class Tree {
 
         return 1 + Math.max(maxLeft, maxRight);
     }
+
+    public Node invert(Node cur){
+        if(cur == null){
+            return null;
+        }
+
+        Node temp = cur.left;
+        cur.left = cur.right;
+        cur.right = temp;
+
+        invert(cur.left);
+        invert(cur.right);
+        return cur;
+    }
 }
