@@ -7,6 +7,9 @@ public class Pr10057 {
         t.insert(2);
         t.insert(1);
         t.insert(3);
+        t.insert(10);
+        t.insert(9);
+        t.insert(16);
         t.print(t.getHead());
     }
 }

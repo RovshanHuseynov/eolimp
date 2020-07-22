@@ -44,15 +44,13 @@ public class Tree {
     }
 
     public void print(Node cur){
-        if(cur != null){
-            System.out.print(cur.val + " ");
-        }
-        else{
+        if(cur == null){
             return;
         }
 
+        System.out.print(cur.val + " ");
+
         print(cur.left);
         print(cur.right);
-
     }
 }
