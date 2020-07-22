@@ -115,4 +115,22 @@ public class Tree {
             return find(cur.right, element);
         }
     }
+
+    public boolean isSame(Node cur1, Node cur2){
+        if(cur1 == null && cur2 == null){
+            return true;
+        }
+        else if(cur1 != null && cur2 == null){
+            return false;
+        }
+        else if(cur2 != null && cur1 == null){
+            return false;
+        }
+
+        if(cur1.val != cur2.val){
+            return false;
+        }
+
+        return isSame(cur1.left, cur2.left) && isSame(cur1.right, cur2.right);
+    }
 }
