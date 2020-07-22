@@ -136,7 +136,6 @@ public class Tree {
 
     public int minDepth(Node cur){
         if(cur == null){
-            //System.out.println("0");
             return 0;
         }
 
@@ -148,9 +147,6 @@ public class Tree {
         }
         else if(minRight == 0){
             return 1 + minLeft;
-        }
-        else if(minLeft == 0 && minRight == 0){
-            return 0;
         }
 
         return 1 + Math.min(minLeft, minRight);
