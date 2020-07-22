@@ -15,6 +15,6 @@ public class Pr10057 {
 //        t.insert(13);
 //        t.insert(9);
 //        t.insert(17);
-        System.out.println(t.sum(t.getHead()));
+        System.out.println(t.find(t.getHead(), 19));
     }
 }

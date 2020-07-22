@@ -99,4 +99,20 @@ public class Tree {
 
         return cur.val + sum(cur.left) + sum(cur.right);
     }
+
+    public Node find(Node cur, int element){
+        if(cur == null){
+            return null;
+        }
+
+        if(cur.val == element){
+            return cur;
+        }
+        else if(element < cur.val){
+            return find(cur.left, element);
+        }
+        else{
+            return find(cur.right, element);
+        }
+    }
 }
