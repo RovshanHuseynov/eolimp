@@ -139,29 +139,20 @@ public class Tree {
             //System.out.println("0");
             return 0;
         }
-        if(cur.left == null && cur.right == null){
-            return 1;
-        }
-
-        if(minDepth(cur.left) == 0){
-            return 1 + minDepth(cur.right);
-        }
-        else if(minDepth(cur.right) == 0){
-            return 1 + minDepth(cur.left);
-        }
-        else if(minDepth(cur.left) == 0 && minDepth(cur.right) == 0){
-            return 0;
-        }
 
         int minLeft = minDepth(cur.left);
         int minRight = minDepth(cur.right);
 
-        if(minLeft < minRight){
-            return 1 + minLeft;
-        }
-        else{
+        if(minLeft == 0){
             return 1 + minRight;
         }
-        //return 1 + Math.min(minDepth(cur.left), minDepth(cur.right));
+        else if(minRight == 0){
+            return 1 + minLeft;
+        }
+        else if(minLeft == 0 && minRight == 0){
+            return 0;
+        }
+
+        return 1 + Math.min(minLeft, minRight);
     }
 }
