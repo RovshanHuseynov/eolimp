@@ -1,5 +1,8 @@
 package tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Tree {
     class Node {
         int val;
@@ -185,14 +188,32 @@ public class Tree {
     }
 
     public boolean isSymmetric(Node cur){
-        if(cur == null){
-            return true;
+        Queue<Node> q = new LinkedList<Node>();
+
+        q.add(cur.left);
+        q.add(cur.right);
+
+        while (!q.isEmpty())
+        {
+            Node tempLeft = q.remove();
+            Node tempRight = q.remove();
+
+            if (tempLeft==null && tempRight==null)
+                continue;
+
+            if ((tempLeft==null && tempRight!=null) ||
+                    (tempLeft!=null && tempRight==null))
+                return false;
+
+            if (tempLeft.val != tempRight.val)
+                return false;
+
+            q.add(tempLeft.left);
+            q.add(tempRight.right);
+            q.add(tempLeft.right);
+            q.add(tempRight.left);
         }
 
-        if((cur.left == null) != (cur.right == null)) {
-            return false;
-        }
-
-        return isSymmetric(cur.left) == isSymmetric(cur.right);
+        return true;
     }
 }
