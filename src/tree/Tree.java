@@ -201,7 +201,7 @@ public class Tree {
             if (tempLeft==null && tempRight==null)
                 continue;
 
-            if (tempLeft==null || tempRight==null)
+            if (tempLeft == null || tempRight == null)
                 return false;
 
             q.add(tempLeft.left);
