@@ -18,42 +18,33 @@ class Test6 {
         arr = new int[n+1][m+1];
 
         while(ans > 0) {
-            //System.out.println(row + " " + column);
             goRight();
-            //System.out.println(row + " " + column);
             if(ans == 0){
                 break;
             }
             column--;
             row++;
-            //System.out.println(row + " " + column);
             goDown();
-            //System.out.println(row + " " + column);
             if(ans == 0){
                 break;
             }
             row--;
             column--;
-            //System.out.println(row + " " + column);
             goLeft();
-            //System.out.println(row + " " + column);
             if(ans == 0){
                 break;
             }
             column++;
             row--;
             limit++;
-            //System.out.println(row + " " + column);
             goUp();
-            //System.out.println(row + " " + column);
             row++;
             column++;
-            //System.out.println(ans);
         }
 
         for(int i=1; i<=n; i++){
             for(int j=1; j<m; j++) {
-                System.out.print(arr[i][j] + " ");
+                System.out.print(arr[i][j] + ".");
             }
             System.out.println(arr[i][m]);
         }
