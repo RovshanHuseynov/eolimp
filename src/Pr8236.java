@@ -2,12 +2,10 @@ import java.util.*;
 
 public class Pr8236 {
     public static void main(String[] args) {
-        Test9 a = new Test9();
+        Pr8236 a = new Pr8236();
         a.calc();
     }
-}
 
-class Test9 {
     public void calc(){
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
