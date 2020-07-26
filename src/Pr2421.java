@@ -4,12 +4,10 @@ import java.util.Scanner;
 
 public class Pr2421 {
     public static void main(String[] args) {
-        Test9 a = new Test9();
+        Pr2421 a = new Pr2421();
         a.calc();
     }
-}
 
-class Test9 {
     private final long mod = 100000000L;
     Map<Long, Long> map = new HashMap<Long, Long>();
 
