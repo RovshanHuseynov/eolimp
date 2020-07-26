@@ -28,8 +28,8 @@ class Test9 {
 
     public long ebob(long a, long b){
         long temp;
-        a = a % mod;
-        b = b % mod;
+        a = a;
+        b = b;
 
         while(b != 0){
             a = a % b;
@@ -53,9 +53,9 @@ class Test9 {
 
         long half = n / 2, ans;
         if(n % 2 == 1)
-            ans = (((fibo(half) * fibo(half)) % mod) + ((fibo(half + 1) * fibo(half + 1)) % mod)) % mod;
+            ans = (fibo(half) * fibo(half)+ fibo(half + 1) * fibo(half + 1)) % mod;
         else
-            ans = (((fibo(half) * fibo(half + 1)) % mod) + ((fibo(half) * fibo(half - 1)) % mod)) % mod;
+            ans = (fibo(half) * fibo(half + 1) + fibo(half) * fibo(half - 1)) % mod;
 
         map.put(n, ans);
         return ans;
