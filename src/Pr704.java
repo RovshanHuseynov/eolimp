@@ -2,21 +2,31 @@ import java.util.Scanner;
 
 public class Pr704 {
     public static void main(String[] args) {
-        Test1 a = new Test1();
+        Pr704 a = new Pr704();
         a.calc();
     }
-}
 
-class Test1 {
     public void calc(){
         Scanner in = new Scanner(System.in);
-        int x = in.nextInt();
+        int t = in.nextInt();
+        int x;
+        int [] fac = new int[1001];
+        fac[0] = 1;
+        for(int i=1; i<=1000; i++){
+            fac[i] = fac[i-1] * i;
 
-        if(x % 2 == 0){
-            System.out.println(x-1);
+            while (fac[i] % 10 == 0) {
+                fac[i] /= 10;
+            }
+
+            if(fac[i] > 1000) {
+                fac[i] %= 1000;
+            }
         }
-        else{
-            System.out.println(x+1);
+
+        for(int i=0; i<t; i++) {
+            x = in.nextInt();
+            System.out.println(fac[x] % 10);
         }
     }
 }
