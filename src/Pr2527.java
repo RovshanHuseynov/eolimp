@@ -2,12 +2,10 @@ import java.util.Scanner;
 
 public class Pr2527 {
     public static void main(String[] args) {
-        Test5 a = new Test5();
+        Pr2527 a = new Pr2527();
         a.calc();
     }
-}
 
-class Test5 {
     long [] fibo = new long[48];
 
     public void calc(){
