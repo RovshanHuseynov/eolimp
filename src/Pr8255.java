@@ -2,12 +2,10 @@ import java.util.Scanner;
 
 public class Pr8255 {
     public static void main(String[] args) {
-        Test10 a = new Test10();
+        Pr8255 a = new Pr8255();
         a.calc();
     }
-}
 
-class Test10 {
     public void calc(){
 
         Scanner in = new Scanner(System.in);
@@ -29,7 +27,6 @@ class Test10 {
         if(n == 0 || s < 0){
             return;
         }
-
 
         if(cur.length() > 0) rec(n-1, s-0, cur + "0");
         rec(n-1, s-1, cur + "1");
