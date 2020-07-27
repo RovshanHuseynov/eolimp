@@ -7,7 +7,6 @@ public class Pr8255 {
     }
 
     public void calc(){
-
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int s = in.nextInt();
@@ -38,15 +37,5 @@ public class Pr8255 {
         rec(n-1, s-7, cur + "7");
         rec(n-1, s-8, cur + "8");
         rec(n-1, s-9, cur + "9");
-    }
-
-    public int sum(String s){
-        int sum = 0;
-
-        for(int i=0; i<s.length(); i++){
-            sum += (int)s.charAt(i) - 48;
-        }
-
-        return sum;
     }
 }
