@@ -2,12 +2,10 @@ import java.util.Scanner;
 
 public class Pr8968 {
     public static void main(String[] args) {
-        Test8 a = new Test8();
+        Pr8968 a = new Pr8968();
         a.calc();
     }
-}
 
-class Test8 {
     public void calc(){
         int n,maxx=-101,minn=101,x,y;
         int [] a = new int[100001];

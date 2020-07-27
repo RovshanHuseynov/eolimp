@@ -1,13 +1,6 @@
 import java.util.*;
 
 public class Pr8593 {
-    public static void main(String[] args) {
-        Test2 a = new Test2();
-        a.calc();
-    }
-}
-
-class Test2 {
     class Node{
         int a,b,c;
 
@@ -16,6 +9,11 @@ class Test2 {
             this.b = b;
             this.c = c;
         }
+    }
+
+    public static void main(String[] args) {
+        Pr8593 a = new Pr8593();
+        a.calc();
     }
 
     public void calc(){
