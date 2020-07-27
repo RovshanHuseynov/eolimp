@@ -2,12 +2,10 @@ import java.util.Scanner;
 
 public class Pr849 {
     public static void main(String[] args) {
-        Test1 a = new Test1();
+        Pr849 a = new Pr849();
         a.calc();
     }
-}
 
-class Test1 {
     public void calc(){
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -33,7 +31,6 @@ class Test1 {
         if(last(cur) <= 7) rec(target-7, cur + "+7");
         if(last(cur) <= 8) rec(target-8, cur + "+8");
         if(last(cur) <= 9) rec(target-9, cur + "+9");
-
     }
 
     public int last(String s){
