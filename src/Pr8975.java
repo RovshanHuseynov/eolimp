@@ -2,12 +2,10 @@ import java.util.Scanner;
 
 public class Pr8975 {
     public static void main(String[] args) {
-        Test7 a = new Test7();
+        Pr8975 a = new Pr8975();
         a.calc();
     }
-}
 
-class Test7 {
     public void calc(){
         Scanner in = new Scanner(System.in);
         int [] arr = new int[202];
