@@ -8,14 +8,14 @@ public class Pr2527 {
 }
 
 class Test5 {
-    long [] fibo = new long[45];
+    long [] fibo = new long[48];
 
     public void calc(){
         Scanner in = new Scanner(System.in);
         fibo[0] = 1;
         fibo[1] = 1;
 
-        for(int i=2; i<45; i++){
+        for(int i=2; i<=47; i++){
             fibo[i] = fibo[i-1] + fibo[i-2];
         }
 
@@ -26,6 +26,7 @@ class Test5 {
             int left = in.nextInt();
             int right = in.nextInt();
 
+            if(n > 46) n -= (n - 46) / 2 * 2;
             System.out.println(solve(n, left, right));
         }
     }
