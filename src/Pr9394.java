@@ -2,12 +2,10 @@ import java.util.Scanner;
 
 public class Pr9394 {
     public static void main(String[] args) {
-        Test4 a = new Test4();
+        Pr9394 a = new Pr9394();
         a.calc1();
     }
-}
 
-class Test4 {
     public void calc(){
         Scanner in = new Scanner(System.in);
         long n = in.nextLong();
@@ -36,7 +34,7 @@ class Test4 {
         if(s.charAt(0) == '-'){
             i++;
         }
-        System.out.println(5/0);
+
         int sum = 0;
         while(i < s.length()){
             sum += (int)s.charAt(i) - 48;
