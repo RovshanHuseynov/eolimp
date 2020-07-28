@@ -4,6 +4,7 @@ public class Pr8361 {
     public static void main(String[] args) {
         Pr8361 a = new Pr8361();
         a.calc();
+        //a.calc1();
     }
 
     public void calc(){
