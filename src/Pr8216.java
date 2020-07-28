@@ -12,14 +12,13 @@ public class Pr8216 {
         int m = in.nextInt();
         in.nextLine();
         String [] a = new String[n];
-        int len,goUp;
+        int goUp;
         for(int i=0; i<n; i++){
             a[i] = in.nextLine();
         }
 
         for(int i=n-1; i>0; i--){
-            len = a[i].length();
-            for(int j=0; j<len; j++){
+            for(int j=0; j<m; j++){
                 if(a[i].charAt(j) == '.'){
                     goUp = i-1;
                     while(goUp >= 0){
@@ -27,8 +26,8 @@ public class Pr8216 {
                             goUp--;
                         }
                         else if(a[goUp].charAt(j) == 'o'){
-                            a[i] = a[i].substring(0,j) + 'o' + a[i].substring(j+1, len);
-                            a[goUp] = a[goUp].substring(0,j) + '.' + a[goUp].substring(j+1, len);
+                            a[i] = a[i].substring(0,j) + 'o' + a[i].substring(j+1, m);
+                            a[goUp] = a[goUp].substring(0,j) + '.' + a[goUp].substring(j+1, m);
                             break;
                         }
                         else if(a[goUp].charAt(j) == '#') {
