@@ -21,12 +21,16 @@ class Test1 {
         //l.addToTail(temp);
 
         for(int i=1; i<n; i++){
-            p = (a * p * p + b * p + c) % m;
+            p = (a * p * p + b * p + c);
+            System.out.print(p + " ");
+            p = p % m;
             //if(p < 0) p += m;
             //l.addToTail(temp);
+            System.out.println(p);
         }
 
-        p = (a * p * p + b * p + c) % n;
+        p = (a * p * p + b * p + c);
+        p = p % n;
         //if(p < 0) p += n;
 
         if(p < m/2){
