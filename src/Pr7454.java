@@ -35,51 +35,51 @@ public class Pr7454 {
             System.out.println(0);
         }
     }
-}
 
-class Node {
-    int data;
-    Node next;
+    class Node {
+        int data;
+        Node next;
 
-    public Node(int data) {
-        this.data = data;
-    }
-}
-
-class List {
-
-    Node head, tail;
-
-    public void addToTail(int val) {
-        Node newNode = new Node(val);
-        if(head == null){
-            head = newNode;
+        public Node(int data) {
+            this.data = data;
         }
-        else{
-            Node cur = head;
-            while(cur.next != null){
-                cur = cur.next;
+    }
+
+    class List {
+
+        Node head, tail;
+
+        public void addToTail(int val) {
+            Node newNode = new Node(val);
+            if(head == null){
+                head = newNode;
             }
-            cur.next = newNode;
+            else{
+                Node cur = head;
+                while(cur.next != null){
+                    cur = cur.next;
+                }
+                cur.next = newNode;
+            }
+
+            tail = newNode;
         }
 
-        tail = newNode;
-    }
-
-    public int hasCycle() // Returns 1 if a List has a cycle, and 0 otherwise
-    {
-        return 1;
-    }
-
-    public void action(int k){
-        Node cur = head;
-        int cnt = 1;
-
-        while(cnt < k){
-            cur = cur.next;
-            cnt++;
+        public int hasCycle() // Returns 1 if a List has a cycle, and 0 otherwise
+        {
+            return 1;
         }
 
-        tail.next = cur;
+        public void action(int k){
+            Node cur = head;
+            int cnt = 1;
+
+            while(cnt < k){
+                cur = cur.next;
+                cnt++;
+            }
+
+            tail.next = cur;
+        }
     }
 }
