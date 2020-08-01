@@ -2,10 +2,12 @@ import java.util.Scanner;
 
 public class Pr7454 {
     public static void main(String[] args) {
-        Pr7454 a = new Pr7454();
+        Test1 a = new Test1();
         a.calc();
     }
+}
 
+class Test1 {
     public void calc(){
         Scanner in = new Scanner(System.in);
         long p = in.nextLong();
@@ -15,19 +17,19 @@ public class Pr7454 {
         long m = in.nextLong();
         long n = in.nextLong();
 
-        List l = new List();
-        long temp = p;
+        //List l = new List();
         //l.addToTail(temp);
 
         for(int i=1; i<n; i++){
-            temp = (a * temp * temp + b * temp + c) % m;
+            p = (a * p * p + b * p + c) % m;
+            //if(p < 0) p += m;
             //l.addToTail(temp);
         }
 
-        temp %= n;
-        long k = (a * temp * temp + b * temp + c) % n;
+        p = (a * p * p + b * p + c) % n;
+        //if(p < 0) p += n;
 
-        if(k < m/2){
+        if(p < m/2){
             //l.action(k);
             System.out.println(1);
         }
