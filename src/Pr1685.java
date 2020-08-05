@@ -2,12 +2,10 @@ import java.util.Scanner;
 
 public class Pr1685 {
     public static void main(String[] args) {
-        Test a = new Test();
+        Pr1685 a = new Pr1685();
         a.calc();
     }
-}
 
-class Test {
     boolean [] used;
     boolean [][] a;
     int n;
