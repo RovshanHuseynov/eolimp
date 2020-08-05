@@ -36,19 +36,12 @@ public class Pr1685 {
         boolean flag;
 
         for(int i=0; i<n; i++) {
-            used[i] = true;
-            dfs(i);
-            flag = true;
-            cnt++;
-
-            for(int j=0; j<n; j++) {
-                if(!used[j]){
-                    flag = false;
-                    break;
-                }
+            if(!used[i]) {
+                used[i] = true;
+                //System.out.println("call dfs " + i);
+                dfs(i);
+                cnt++;
             }
-
-            if(flag) break;
         }
 
         /*for(int i=0; i<n; i++) {
@@ -63,6 +56,7 @@ public class Pr1685 {
     }
 
     public void dfs(int i){
+        //System.out.println("dfs " + i);
         used[i] = true;
 
         for(int j=0; j<n; j++){
