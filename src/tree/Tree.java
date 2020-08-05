@@ -212,4 +212,24 @@ public class Tree {
 
         return true;
     }
+
+    public boolean isBalanced(Node cur){
+        if(cur.left == null && cur.right == null) {
+            return true;
+        }
+        else if(cur.left == null){
+            if(cur.right.left == null && cur.right.right == null)
+                return true;
+            else
+                return false;
+        }
+        else if(cur.right == null){
+            if(cur.left.left == null && cur.left.right == null)
+                return true;
+            else
+                return false;
+        }
+
+        return isBalanced(cur.left) && isBalanced(cur.right);
+    }
 }
