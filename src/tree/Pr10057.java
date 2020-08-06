@@ -17,11 +17,10 @@ public class Pr10057 {
         t2.insert(2);
         t2.insert(1);
         t2.insert(5);
-        t2.insert(6);*/
+        t2.insert(6);
         Tree t3 = new Tree();
         t3.insert(13);
         t3.insert(12);
-        //t3.insert(11);
-        System.out.println(t3.isBalanced(t3.getHead()));
+        t3.insert(11);*/
     }
 }
