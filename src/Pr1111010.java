@@ -15,14 +15,14 @@ import java.util.Stack;
 public class Pr1111010 {
     public static void main(String[] args) {
         Pr1111010 a = new Pr1111010();
-        a.calc();
+        a.calcDfs();
     }
 
     boolean [] used;
     Stack<Integer> s;
     int n;
     int [][] a;
-    public void calc() {
+    public void calcDfs() {
         Scanner in = new Scanner(System.in);
         n = in.nextInt();
         used = new boolean[n+1];
