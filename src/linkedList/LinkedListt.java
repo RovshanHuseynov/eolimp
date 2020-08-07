@@ -1,5 +1,7 @@
 package linkedList;
 
+import java.util.HashSet;
+
 public class LinkedListt {
 
     static class Node {
@@ -201,7 +203,7 @@ public class LinkedListt {
     }
 
     public int hasCycle(Node cur){
-        java.util.List<Object> arr = new java.util.ArrayList<>();
+        HashSet<Node> arr = new HashSet<>();
 
         while(cur != null) {
             if (arr.contains(cur))
@@ -221,9 +223,9 @@ public class LinkedListt {
         Node fast = head;
 
         while(true){
-            if(fast.next == null) return 0;
-
             slow = slow.next;
+
+            if(fast.next == null) return 0;
             fast = fast.next.next;
 
             if(slow == null) return 0;
@@ -233,7 +235,6 @@ public class LinkedListt {
                 return 1;
             }
         }
-
     }
 
     public Node detectCycle(Node cur){
