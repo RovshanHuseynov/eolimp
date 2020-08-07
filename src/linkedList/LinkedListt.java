@@ -215,19 +215,21 @@ public class LinkedListt {
     }
 
     public int hasCycle2(Node head){
-        Node cur1 = head;
-        Node cur2 = head;
+        if(head == null) return 0;
+
+        Node slow = head;
+        Node fast = head;
 
         while(true){
-            if(cur1 == null) return 0;
-            if(cur2.next == null) return 0;
+            if(fast.next == null) return 0;
 
-            cur1 = cur1.next;
-            cur2 = cur2.next.next;
+            slow = slow.next;
+            fast = fast.next.next;
 
-            if(cur2 == null) return 0;
+            if(slow == null) return 0;
+            if(fast == null) return 0;
 
-            if(cur1 == cur2){
+            if(slow == fast){
                 return 1;
             }
         }
