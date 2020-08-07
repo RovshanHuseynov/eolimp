@@ -238,7 +238,7 @@ public class LinkedListt {
     }
 
     public Node detectCycle(Node cur){
-        java.util.ArrayList<Object> arr = new java.util.ArrayList<>();
+        java.util.HashSet<Object> arr = new java.util.HashSet<>();
 
         while(cur != null) {
             if (arr.contains(cur)) {
