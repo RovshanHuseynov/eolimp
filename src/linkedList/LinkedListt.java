@@ -2,7 +2,7 @@ package linkedList;
 
 public class LinkedListt {
 
-    class Node {
+    static class Node {
         int val;
         Node next;
 
@@ -28,6 +28,23 @@ public class LinkedListt {
 
             cur.next = newNode;
         }
+    }
+
+    public Node addLast2(Node newNode){
+        if(head == null){
+            head = newNode;
+        }
+        else {
+            Node cur = head;
+
+            while (cur.next != null) {
+                cur = cur.next;
+            }
+
+            cur.next = newNode;
+        }
+
+        return newNode;
     }
 
     public void addFirst(int val){
@@ -184,19 +201,37 @@ public class LinkedListt {
     }
 
     public int hasCycle(Node cur){
-        java.util.ArrayList<Object> arr = new java.util.ArrayList<>();
+        java.util.List<Object> arr = new java.util.ArrayList<>();
 
         while(cur != null) {
-            if (arr.contains(cur)) {
+            if (arr.contains(cur))
                 return 1;
-            } else {
-                arr.add(cur);
-            }
 
+            arr.add(cur);
             cur = cur.next;
         }
 
         return 0;
+    }
+
+    public int hasCycle2(Node head){
+        Node cur1 = head;
+        Node cur2 = head;
+
+        while(true){
+            if(cur1 == null) return 0;
+            if(cur2.next == null) return 0;
+
+            cur1 = cur1.next;
+            cur2 = cur2.next.next;
+
+            if(cur2 == null) return 0;
+
+            if(cur1 == cur2){
+                return 1;
+            }
+        }
+
     }
 
     public Node detectCycle(Node cur){
