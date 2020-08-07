@@ -2,12 +2,13 @@ package linkedList;
 
 public class Pr10041 {
     public static void main(String[] args) {
-       /* LinkedListt ll = new LinkedListt();
+        LinkedListt ll = new LinkedListt();
         ll.addLast(1);
-        ll.addLast(3);*/
-//        ll.addLast(5);
-//        ll.addLast(7);
-//        ll.addLast(9);
+        /*ll.addLast(4);
+        ll.addLast(7);
+        ll.addLast(8);
+        ll.addLast(9);*/
+        ll.reverse(ll.getHead());
 
        /* System.out.println(ll.hasCycle(ll.getHead()));
 

@@ -147,13 +147,22 @@ public class LinkedListt {
         }
     }
 
-    public Node reverse(Node cur){
-        if(cur.next != null){
-            reverse(cur.next);
-            cur.next.next = cur;
-        }
+    public Node reverse(Node head){
+        if(head == null) return null;
 
-        return cur;
+        Node cur = head.next;
+        Node prev = head;
+        prev.next = null;
+        Node temp;
+
+        while(cur != null){
+            //System.out.println(prev.val + " " + cur.val);
+            temp = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = temp;
+        }
+        return prev;
     }
 
     public Node merge(Node cur1, Node cur2){
