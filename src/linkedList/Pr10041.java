@@ -2,13 +2,22 @@ package linkedList;
 
 public class Pr10041 {
     public static void main(String[] args) {
-        LinkedListt ll = new LinkedListt();
-        ll.addLast(1);
-        /*ll.addLast(4);
-        ll.addLast(7);
-        ll.addLast(8);
-        ll.addLast(9);*/
-        ll.reverse(ll.getHead());
+        LinkedListt l1 = new LinkedListt();
+        l1.addLast(1);
+        l1.addLast(2);
+        l1.addLast(3);
+        l1.addLast(4);
+        l1.addLast(7);
+        l1.addLast(8);
+        l1.addLast(9);
+        LinkedListt l2 = new LinkedListt();
+        l2.addLast(5);
+        l2.addLast(6);
+        l2.addLast(7);
+        l2.addLast(8);
+        l2.addLast(9);
+        System.out.println(l1.intersection(l1.getHead(), l2.getHead()));
+
 
        /* System.out.println(ll.hasCycle(ll.getHead()));
 

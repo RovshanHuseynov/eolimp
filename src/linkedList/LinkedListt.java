@@ -1,5 +1,6 @@
 package linkedList;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class LinkedListt {
@@ -274,6 +275,24 @@ public class LinkedListt {
             }
 
             cur = cur.next;
+        }
+
+        return null;
+    }
+
+    public Node intersection(Node cur1, Node cur2){
+        java.util.HashSet<Node> s = new java.util.HashSet<>();
+
+        while(cur1 != null){
+            s.add(cur1);
+            cur1 = cur1.next;
+        }
+
+        while(cur2 != null){
+            if(s.contains(cur2)){
+                return cur2;
+            }
+            cur2 = cur2.next;
         }
 
         return null;
