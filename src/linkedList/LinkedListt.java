@@ -157,40 +157,57 @@ public class LinkedListt {
     }
 
     public Node merge(Node cur1, Node cur2){
-        if(cur1 != null && cur2 != null) {
-            if (cur1.val < cur2.val) {
-                merge(cur1.next, cur2);
-                //System.out.print(cur1.val + " ");
+        Node third, thirdHead;
 
-                if(cur1.next != null && cur1.next.val >= cur2.val){
-                    cur2.next = cur1.next;
-                    cur1.next = cur2;
-                }
-                return cur1;
-            } else {
-                merge(cur1, cur2.next);
-                //System.out.print(cur2.val + " ");
-
-                if(cur2.next != null && cur2.next.val >= cur1.val){
-                    cur2.next = cur1;
-                }
-
-                return cur2;
+        if(cur1 != null && cur2 != null){
+            if(cur1.val < cur2.val) {
+                thirdHead = cur1;
+                cur1 = cur1.next;
+            }
+            else{
+                thirdHead = cur2;
+                cur2 = cur2.next;
             }
         }
         else if(cur1 != null){
-            merge(cur1.next, null);
-            //System.out.print(cur1.val + " ");
-            return cur1;
+            thirdHead = cur1;
+            cur1 = cur1.next;
         }
         else if(cur2 != null){
-            merge(null, cur2.next);
-            //System.out.print(cur2.val + " ");
-            return cur2;
+            thirdHead = cur2;
+            cur2 = cur2.next;
         }
-        else {
-            return null;
+        else{
+            thirdHead = null;
         }
+
+        if(thirdHead != null) thirdHead.next = null;
+        third = thirdHead;
+
+        while(cur1 != null || cur2 != null){
+            if(cur1 != null && cur2 != null){
+                if(cur1.val < cur2.val){
+                    third.next = cur1;
+                    cur1 = cur1.next;
+                }
+                else {
+                    third.next = cur2;
+                    cur2 = cur2.next;
+                }
+            }
+            else if(cur1 == null){
+                third.next = cur2;
+                cur2 = cur2.next;
+            }
+            else{
+                third.next = cur1;
+                cur1 = cur1.next;
+            }
+            third = third.next;
+            third.next = null;
+        }
+
+        return thirdHead;
     }
 
     public int sum(Node cur){

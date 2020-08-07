@@ -55,20 +55,5 @@ public class Pr10041 {
         //ll.reverse(ll.head);
         //ll.print();
         //System.out.println(ll.getHead());
-
-        LinkedListt l = new LinkedListt();
-        LinkedListt.Node temp = l.addLast2(new LinkedListt.Node(1));
-        LinkedListt.Node temp2 = l.addLast2(new LinkedListt.Node(2));
-        l.addLast2(new LinkedListt.Node(3));
-        l.addLast2(temp);
-        System.out.println(l.hasCycle2(l.getHead()));
-
-        LinkedListt ll = new LinkedListt();
-        for(int i=1; i<=100; i++){
-            ll.addLast(i);
-        }
-
-        ll.addLast(101);
-        //System.out.println(ll.hasCycle(ll.getHead()));
     }
 }
