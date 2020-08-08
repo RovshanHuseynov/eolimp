@@ -3,12 +3,10 @@ import java.util.Scanner;
 
 public class Pr776 {
     public static void main(String[] args) {
-        Test a = new Test();
+        Pr776 a = new Pr776();
         a.calc();
     }
-}
 
-class Test {
     int n;
     ArrayList<ArrayList<Integer> > arr;
     boolean [] used;
