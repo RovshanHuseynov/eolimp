@@ -34,66 +34,66 @@ public class Pr7454 {
             System.out.println(l.hasCycle());
         }
     }
-}
 
-class Node {
-    Long data;
-    Node next;
+    class Node {
+        Long data;
+        Node next;
 
-    public Node(Long data) {
-        this.data = data;
-    }
-}
-
-class List {
-
-    Node head, tail;
-
-    public void addToTail(Long val) {
-        Node newNode = new Node(val);
-        if(head == null){
-            head = newNode;
+        public Node(Long data) {
+            this.data = data;
         }
-        else{
-            Node cur = head;
-            while(cur.next != null){
-                cur = cur.next;
+    }
+
+    class List {
+
+        Node head, tail;
+
+        public void addToTail(Long val) {
+            Node newNode = new Node(val);
+            if(head == null){
+                head = newNode;
             }
-            cur.next = newNode;
+            else{
+                Node cur = head;
+                while(cur.next != null){
+                    cur = cur.next;
+                }
+                cur.next = newNode;
+            }
+
+            tail = newNode;
         }
 
-        tail = newNode;
-    }
+        public int hasCycle() // Returns 1 if a List has a cycle, and 0 otherwise
+        {
+            if(head == null) return 0;
 
-    public int hasCycle() // Returns 1 if a List has a cycle, and 0 otherwise
-    {
-        if(head == null) return 0;
+            Node slow = head;
+            Node fast = head;
 
-        Node slow = head;
-        Node fast = head;
+            while(true){
+                slow = slow.next;
 
-        while(true){
-            slow = slow.next;
+                if(fast.next == null) return 0;
+                fast = fast.next.next;
 
-            if(fast.next == null) return 0;
-            fast = fast.next.next;
+                if(slow == null) return 0;
+                if(fast == null) return 0;
 
-            if(slow == null) return 0;
-            if(fast == null) return 0;
-
-            if(slow == fast) return 1;
-        }
-    }
-
-    public void action(Long k){
-        Node cur = head;
-        int cnt = 0;
-
-        while(cnt < k){
-            cur = cur.next;
-            cnt++;
+                if(slow == fast) return 1;
+            }
         }
 
-        tail.next = cur;
+        public void action(Long k){
+            Node cur = head;
+            int cnt = 0;
+
+            while(cnt < k){
+                cur = cur.next;
+                cnt++;
+            }
+
+            tail.next = cur;
+        }
     }
 }
