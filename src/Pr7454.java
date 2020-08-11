@@ -8,82 +8,92 @@ public class Pr7454 {
 
     public void calc(){
         Scanner in = new Scanner(System.in);
-        long p = in.nextLong();
-        long a = in.nextLong();
-        long b = in.nextLong();
-        long c = in.nextLong();
-        long m = in.nextLong();
-        long n = in.nextLong();
+        Long p = in.nextLong();
+        Long a = in.nextLong();
+        Long b = in.nextLong();
+        Long c = in.nextLong();
+        Long m = in.nextLong();
+        Long n = in.nextLong();
 
-        //List l = new List();
-        //l.addToTail(temp);
+        List l = new List();
+        Long temp = p;
+        l.addToTail(temp);
 
         for(int i=1; i<n; i++){
-            p = (a * p * p + b * p + c);
-            System.out.print(p + " ");
-            p = p % m;
-            //if(p < 0) p += m;
-            //l.addToTail(temp);
-            System.out.println(p);
+            temp = (a * temp * temp + b * temp + c) % m;
+            l.addToTail(temp);
         }
 
-        p = (a * p * p + b * p + c);
-        p = p % n;
-        //if(p < 0) p += n;
+        Long k = (a * temp * temp + b * temp + c) % n;
+        l.action(k);
 
-        if(p < m/2){
-            //l.action(k);
+        if(k < m/2){
             System.out.println(1);
         }
         else{
-            System.out.println(0);
+            System.out.println(l.hasCycle());
         }
     }
+}
 
-    class Node {
-        int data;
-        Node next;
+class Node {
+    Long data;
+    Node next;
 
-        public Node(int data) {
-            this.data = data;
-        }
+    public Node(Long data) {
+        this.data = data;
     }
+}
 
-    class List {
+class List {
 
-        Node head, tail;
+    Node head, tail;
 
-        public void addToTail(int val) {
-            Node newNode = new Node(val);
-            if(head == null){
-                head = newNode;
-            }
-            else{
-                Node cur = head;
-                while(cur.next != null){
-                    cur = cur.next;
-                }
-                cur.next = newNode;
-            }
-
-            tail = newNode;
+    public void addToTail(Long val) {
+        Node newNode = new Node(val);
+        if(head == null){
+            head = newNode;
         }
-
-        public int hasCycle() // Returns 1 if a List has a cycle, and 0 otherwise
-        {
-            return 1;
-        }
-
-        public void action(int k){
+        else{
             Node cur = head;
-            int cnt = 1;
-
-            while(cnt < k){
+            while(cur.next != null){
                 cur = cur.next;
-                cnt++;
             }
-
-            tail.next = cur;
+            cur.next = newNode;
         }
+
+        tail = newNode;
+    }
+
+    public int hasCycle() // Returns 1 if a List has a cycle, and 0 otherwise
+    {
+        if(head == null) return 0;
+
+        Node slow = head;
+        Node fast = head;
+
+        while(true){
+            slow = slow.next;
+
+            if(fast.next == null) return 0;
+            fast = fast.next.next;
+
+            if(slow == null) return 0;
+            if(fast == null) return 0;
+
+            if(slow == fast) return 1;
+        }
+    }
+
+    public void action(Long k){
+        Node cur = head;
+        int cnt = 0;
+
+        while(cnt < k){
+            cur = cur.next;
+            cnt++;
+        }
+
+        tail.next = cur;
     }
 }
